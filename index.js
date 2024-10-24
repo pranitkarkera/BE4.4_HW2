@@ -1,10 +1,12 @@
+
 const express = require('express')
 const app = express()
-
+const cors = require("cors");
 const { initializeDatabase} = require("./db/db.connect")
 const Hotel = require("./models/hotel.models");
 initializeDatabase();
 
+app.use(cors())
 app.use(express.json())
 
 // const newHotel1 = {
